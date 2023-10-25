@@ -61,11 +61,23 @@ public class CharacterController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F))
         {
             animator.SetBool("Attack", true);
+            // if(other.gameObject.CompareTag("Enemy"))
+            // {
+            //     Destroy(this.gameObject);
+            // }
         }
         else
         {
-            animator.SetBool("Attack", false);        }
+            animator.SetBool("Attack", false);        
+        }
     }
+//     private void OnTriggerEnter2DAttack(Collider2D other)
+//    {
+//     if(other.gameObject.CompareTag("Enemy"))
+//     {
+//             Destroy(this.gameObject);
+//     }
+//    }
     void voletado(float inputMovimiento)
     {
         //Va a voltear el sprite del jugador 
