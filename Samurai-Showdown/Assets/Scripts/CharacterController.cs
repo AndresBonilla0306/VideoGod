@@ -11,6 +11,8 @@ public class CharacterController : MonoBehaviour
    private BoxCollider2D boxCollider;
    private bool lookright = true;
    private Animator animator;
+   public float fuerzaGolpe;
+   private bool canMove = true;
     private void Start() 
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -21,10 +23,11 @@ public class CharacterController : MonoBehaviour
     {
         ProcesarMovimiento();
         saltito(); 
-        Ataque();
+        //Ataque();
     }
     void ProcesarMovimiento()
     {
+        if(!canMove) return;
         //logica mamalona de movimiento
         float inputMovimiento = Input.GetAxis("Horizontal");
 
@@ -56,28 +59,6 @@ public class CharacterController : MonoBehaviour
             animator.SetBool("IsJump", false);
         }
     }
-    void Ataque()
-    {
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            animator.SetBool("Attack", true);
-            // if(other.gameObject.CompareTag("Enemy"))
-            // {
-            //     Destroy(this.gameObject);
-            // }
-        }
-        else
-        {
-            animator.SetBool("Attack", false);        
-        }
-    }
-//     private void OnTriggerEnter2DAttack(Collider2D other)
-//    {
-//     if(other.gameObject.CompareTag("Enemy"))
-//     {
-//             Destroy(this.gameObject);
-//     }
-//    }
     void voletado(float inputMovimiento)
     {
         //Va a voltear el sprite del jugador 
@@ -86,5 +67,31 @@ public class CharacterController : MonoBehaviour
             lookright = !lookright;
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
+    }
+
+    public void AplicarGolpe()
+    {
+        canMove = false;
+        Vector2 direccionGolpe;
+
+        if(rigidBody.velocity.x > 0)
+        {
+            direccionGolpe = new Vector2(-1,0);
+        }else{
+            direccionGolpe = new Vector2(1,0);
+        }
+        rigidBody.AddForce(direccionGolpe * fuerzaGolpe);
+        StartCoroutine(WaitAndMove());
+        Debug.Log("Golpe");
+    }
+    IEnumerator WaitAndMove()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        while(!EstaEnSuelo()){
+            yield return null;
+        }
+
+        canMove = true;
     }
 }

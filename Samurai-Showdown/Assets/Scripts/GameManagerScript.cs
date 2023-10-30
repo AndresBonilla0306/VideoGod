@@ -8,6 +8,8 @@ public class GameManagerScript : MonoBehaviour
    public static GameManagerScript Instance {get; private set; }
    public HUD hud;
    private int vidas = 3;
+   public int PuntosTotales {get {return puntosTotales;}}
+   private int puntosTotales;
    void Awake()
    {
     if(Instance == null)
@@ -38,5 +40,9 @@ public class GameManagerScript : MonoBehaviour
     hud.ActivarVida(vidas);
     vidas += 1;
     return true;
+   }
+   public void SumarPoints(int puntosSumar)
+   {
+        puntosTotales += puntosSumar;
    }
 }

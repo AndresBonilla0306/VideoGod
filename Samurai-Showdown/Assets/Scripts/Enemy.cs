@@ -4,11 +4,27 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D other)
+    [SerializeField] private float vida;
+    public Animator anim;
+    public int valor = 1;
+    public GameManagerScript gameManager;
+
+    public void TomarDaño(float daño)
     {
-        if(other.gameObject.CompareTag("Player"))
+        vida -= daño;
+        if (vida <= 0)
         {
-            GameManagerScript.Instance.PerderVida();
+            Muerte();
         }
+    }
+    public void Muerte()
+    {
+        anim.SetTrigger("Muelto");
+        StartCoroutine (DelayAndDie());
+        gameManager.SumarPoints(valor);
+    }
+    IEnumerator DelayAndDie() {
+    yield return new WaitForSeconds(1);
+    Destroy(this.gameObject);
     }
 }

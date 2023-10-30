@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 17c504964e345bc4d8fabe0363620e55
+guid: cf30316c392151247b6be93d8dcae9a1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,11 +129,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: run-sword_0
+      name: death_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
+        y: 0
         width: 32
         height: 22
       alignment: 0
@@ -143,18 +143,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00f9294aa5bbf884f8c7d069a38eb4ab
-      internalID: -64673853
+      spriteID: 3e05fc65b85900f46834f6b3ef433de5
+      internalID: 149481260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-sword_1
+      name: death_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 1
+        y: 0
         width: 32
         height: 22
       alignment: 0
@@ -164,18 +164,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 305a91d66239b09488106095e3c8513f
-      internalID: -1529551489
+      spriteID: b59fd8355fec3394ab2dfde9bbd5a94f
+      internalID: -1542209085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-sword_2
+      name: death_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 1
+        y: 0
         width: 32
         height: 22
       alignment: 0
@@ -185,18 +185,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 051c988e9de562949997a844fb55f859
-      internalID: 1255044739
+      spriteID: ed58d8d8a15eebf4bb8d743f3acd6602
+      internalID: -1323376376
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-sword_3
+      name: death_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 1
+        y: 0
         width: 32
         height: 22
       alignment: 0
@@ -206,18 +206,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f317a04763f7ed64aaa9268a772769f9
-      internalID: -373757160
+      spriteID: 3d22b70bf4f0a2244ad436ad31cb0241
+      internalID: -1925119841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-sword_4
+      name: death_4
       rect:
         serializedVersion: 2
         x: 128
-        y: 1
+        y: 0
         width: 32
         height: 22
       alignment: 0
@@ -227,18 +227,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0ed139e690de57439ccb6ab618158cd
-      internalID: 1658356043
+      spriteID: 4ba7caf4f8f712f4babaed0411b34711
+      internalID: -813337691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-sword_5
+      name: death_5
       rect:
         serializedVersion: 2
         x: 160
-        y: 1
+        y: 0
         width: 32
         height: 22
       alignment: 0
@@ -248,18 +248,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5cc18fd7c3912047b3222f93eb8a983
-      internalID: -313800096
+      spriteID: 5b8520ef1c53708409a46d1283168d2a
+      internalID: -787331944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-sword_6
+      name: death_6
       rect:
         serializedVersion: 2
         x: 192
-        y: 1
+        y: 0
         width: 32
         height: 22
       alignment: 0
@@ -269,18 +269,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50dce7b078d5f99448ef6ca5df0f1d0e
-      internalID: 1517006463
+      spriteID: b8d3e6dfc7a36c446a54c0f810fc1a81
+      internalID: -343839428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-sword_7
+      name: death_7
       rect:
         serializedVersion: 2
         x: 224
-        y: 1
+        y: 0
         width: 32
         height: 22
       alignment: 0
@@ -290,39 +290,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2b523e59b7d4ff41b22901ae63e2afa
-      internalID: -398075863
+      spriteID: f108239ea4362174a9a6841d157e427c
+      internalID: 1266401986
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run-sword_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 1
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 31be9c4e113ed4e42949c7f5999e7c49
-      internalID: 1175395605
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: run-sword_9
+      name: death_8
       rect:
         serializedVersion: 2
         x: 288
-        y: 1
+        y: 0
         width: 32
         height: 22
       alignment: 0
@@ -332,8 +311,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50bd4646d87ab1f47a359c1a8196400b
-      internalID: -1948437849
+      spriteID: 0dc8c658e823e1c478a3215830309474
+      internalID: 307319438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_9
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d7e5a27fb430304da56bc3d3af94781
+      internalID: -580222858
       vertices: []
       indices: 
       edges: []
@@ -349,16 +349,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      run-sword_0: -64673853
-      run-sword_1: -1529551489
-      run-sword_2: 1255044739
-      run-sword_3: -373757160
-      run-sword_4: 1658356043
-      run-sword_5: -313800096
-      run-sword_6: 1517006463
-      run-sword_7: -398075863
-      run-sword_8: 1175395605
-      run-sword_9: -1948437849
+      death_0: 149481260
+      death_1: -1542209085
+      death_2: -1323376376
+      death_3: -1925119841
+      death_4: -813337691
+      death_5: -787331944
+      death_6: -343839428
+      death_7: 1266401986
+      death_8: 307319438
+      death_9: -580222858
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
