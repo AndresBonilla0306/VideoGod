@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Corazon : MonoBehaviour
 {
+    public AudioClip sonidoHeart;
    private void OnTriggerEnter2D(Collider2D other)
    {
     if(other.gameObject.CompareTag("Player"))
@@ -12,6 +13,7 @@ public class Corazon : MonoBehaviour
         if (VidaGanada)
         {
             Destroy(this.gameObject);
+            AudioManager.Instance.PlaySound(sonidoHeart);
         }
     }
    }

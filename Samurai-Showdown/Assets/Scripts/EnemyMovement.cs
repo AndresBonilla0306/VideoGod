@@ -103,6 +103,10 @@ public class EnemyMovement : MonoBehaviour
     {
         anim.SetBool("attack", false);
         attacking = false;
+        StartCoroutine (DelayAndAttack());
+    }
+    IEnumerator DelayAndAttack() {
+        yield return new WaitForSeconds(1);
         rango.GetComponent<BoxCollider2D>().enabled = true;
     }
     public void ColliderWeaponTrue()

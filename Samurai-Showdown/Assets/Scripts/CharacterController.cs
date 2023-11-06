@@ -13,6 +13,16 @@ public class CharacterController : MonoBehaviour
    private Animator animator;
    public float fuerzaGolpe;
    private bool canMove = true;
+   private Vector2 lastMovementDirection;
+   public float fuerzaEmpuje;
+   public GameObject toActivate;
+   public GameObject ToActivate2;
+   public GameObject Cartel;
+   public AudioClip SonidoDamage;
+   public AudioClip BossFight;
+   public AudioClip BossSpawn;
+   public AudioClip SonidoAmbiente;
+
     private void Start() 
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -34,6 +44,7 @@ public class CharacterController : MonoBehaviour
         if(inputMovimiento != 0f)
         {
             animator.SetBool("isRunning", true);
+            lastMovementDirection = new Vector2(inputMovimiento, 0f);
         }
         else{
             animator.SetBool("isRunning", false);
@@ -71,18 +82,24 @@ public class CharacterController : MonoBehaviour
 
     public void AplicarGolpe()
     {
+        AudioManager.Instance.PlaySound(SonidoDamage);
         canMove = false;
-        Vector2 direccionGolpe;
+        Vector2 direccionGolpe = lastMovementDirection.normalized;
 
-        if(rigidBody.velocity.x > 0)
+        if (direccionGolpe == Vector2.zero)
         {
-            direccionGolpe = new Vector2(-1,0);
-        }else{
-            direccionGolpe = new Vector2(1,0);
+            // Si no hay una dirección registrada, asumimos que el personaje estaba mirando hacia la derecha.
+            direccionGolpe = new Vector2(1, 1);
         }
         rigidBody.AddForce(direccionGolpe * fuerzaGolpe);
         StartCoroutine(WaitAndMove());
         Debug.Log("Golpe");
+    }
+    public void AplicarEmpuje(Vector2 direccion)
+    {
+        Vector2 fuerza = direccion.normalized * fuerzaEmpuje;
+
+        rigidBody.AddForce(fuerza, ForceMode2D.Impulse);
     }
     IEnumerator WaitAndMove()
     {
@@ -94,4 +111,27 @@ public class CharacterController : MonoBehaviour
 
         canMove = true;
     }
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+        if(coll.CompareTag("Spawn"))
+        {
+            AudioManager.Instance.DetenerAudio();
+            AudioManager.Instance.PlayInLoop(BossFight);
+            AudioManager.Instance.PlaySound(BossSpawn);
+            toActivate.SetActive(true);
+            ToActivate2.SetActive(true);
+            Cartel.SetActive(false);
+            Debug.Log("Spawn");
+        }
+        if(coll.CompareTag("Sign"))
+        {
+            Cartel.SetActive(true);
+        }
+        if(coll.CompareTag("Start"))
+        {
+            AudioManager.Instance.PlayInLoop(SonidoAmbiente);
+            Destroy(coll.gameObject);
+        }
+    }
+    
 }

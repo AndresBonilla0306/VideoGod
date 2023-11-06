@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Boss
+  - Spawn
+  - Tentacle
+  - Sign
+  - Start
   layers:
   - Default
   - TransparentFX

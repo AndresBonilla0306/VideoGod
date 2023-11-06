@@ -7,7 +7,7 @@ public class GameManagerScript : MonoBehaviour
 {
    public static GameManagerScript Instance {get; private set; }
    public HUD hud;
-   private int vidas = 3;
+   private int vidas = 8;
    public int PuntosTotales {get {return puntosTotales;}}
    private int puntosTotales;
    void Awake()
@@ -33,7 +33,7 @@ public class GameManagerScript : MonoBehaviour
    public bool GanarVida()
    {
 
-    if(vidas == 3)
+    if(vidas == 8)
     {
         return false;
     }

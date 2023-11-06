@@ -8,10 +8,12 @@ public class Enemy : MonoBehaviour
     public Animator anim;
     public int valor = 1;
     public GameManagerScript gameManager;
+    public AudioClip sonidoDamage;
 
     public void TomarDaño(float daño)
     {
         vida -= daño;
+        AudioManager.Instance.PlaySound(sonidoDamage);
         if (vida <= 0)
         {
             Muerte();

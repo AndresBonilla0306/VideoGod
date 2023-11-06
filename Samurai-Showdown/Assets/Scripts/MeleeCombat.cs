@@ -9,6 +9,9 @@ public class MeleeCombat : MonoBehaviour
     [SerializeField] private float dañoGolpe;
     [SerializeField] private float tiempoEntreAtaques;
     [SerializeField] private float tiempoSiguienteAtaque;
+    [SerializeField] private ParticleSystem particulas;
+    public AudioClip SonidoEspada;
+    public AudioClip Cortado;
     private Animator animator;
 
     private void Start()
@@ -26,6 +29,7 @@ public class MeleeCombat : MonoBehaviour
         {
             Golpe();
             tiempoSiguienteAtaque = tiempoEntreAtaques;
+            AudioManager.Instance.PlaySound(SonidoEspada);
         }
     }
     private void Golpe(){
@@ -38,6 +42,18 @@ public class MeleeCombat : MonoBehaviour
         {
             if(collisionador.CompareTag("Enemy")){
                 collisionador.transform.GetComponent<Enemy>().TomarDaño(dañoGolpe);
+                particulas.Play();
+            }
+            if(collisionador.CompareTag("Boss"))
+            {
+                collisionador.transform.GetComponent<Boss>().TomarDaño(dañoGolpe);
+                particulas.Play();
+            }
+            if(collisionador.CompareTag("Tentacle"))
+            {
+                AudioManager.Instance.PlaySound(Cortado);
+                Destroy(collisionador.gameObject);
+                particulas.Play();
             }
         }
     }

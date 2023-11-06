@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18dd164bfe20c9a4187b0d7a1b013298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoAtaque: {fileID: 8300000, guid: 71e9739c0388d6847b22f251106d9d5c, type: 3}
 --- !u!1 &4830786377919421497
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,5 +341,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 1
   anim: {fileID: 4830786377919421496}
-  valor: 1
+  valor: 10
   gameManager: {fileID: 0}
+  sonidoDamage: {fileID: 8300000, guid: 2f7a70fbbd834f34097c302b717fb6cb, type: 3}
