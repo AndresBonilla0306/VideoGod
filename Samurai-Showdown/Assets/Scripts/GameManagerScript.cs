@@ -26,7 +26,8 @@ public class GameManagerScript : MonoBehaviour
 
     if(vidas == 0)
     {
-        SceneManager.LoadScene(0);
+        Debug.Log("Muerte");
+        CharacterController.Instance.Die();
     }
     hud.DesactivarVida(vidas);
    }

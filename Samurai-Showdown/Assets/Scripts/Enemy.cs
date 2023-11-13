@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float vida;
     public Animator anim;
     public int valor = 1;
-    public GameManagerScript gameManager;
+    //public GameManagerScript gameManager;
     public AudioClip sonidoDamage;
 
     public void TomarDaño(float daño)
@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     {
         anim.SetTrigger("Muelto");
         StartCoroutine (DelayAndDie());
-        gameManager.SumarPoints(valor);
+        GameManagerScript.Instance.SumarPoints(valor);
     }
     IEnumerator DelayAndDie() {
     yield return new WaitForSeconds(1);

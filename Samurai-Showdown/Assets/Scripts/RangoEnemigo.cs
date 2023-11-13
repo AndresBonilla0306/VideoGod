@@ -15,7 +15,6 @@ public class RangoEnemigo : MonoBehaviour
             anim.SetBool("attack", true);
             enemy.attacking = true;
             GetComponent<BoxCollider2D>().enabled = false;
-            Debug.Log("Toque");
         }
     }
 }

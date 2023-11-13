@@ -52,6 +52,7 @@ public class Boss : MonoBehaviour
     IEnumerator DelayAndDie() {
     yield return new WaitForSeconds(1);
     Destroy(this.gameObject);
+    Menu.Instance.Win();
     }
     public void MirarJugador()
     {

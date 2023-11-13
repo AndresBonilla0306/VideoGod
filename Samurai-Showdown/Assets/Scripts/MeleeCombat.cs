@@ -25,7 +25,7 @@ public class MeleeCombat : MonoBehaviour
         {
             tiempoSiguienteAtaque -= Time.deltaTime;
         }
-        if(Input.GetKeyDown("f") && tiempoSiguienteAtaque <= 0)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && tiempoSiguienteAtaque <= 0)
         {
             Golpe();
             tiempoSiguienteAtaque = tiempoEntreAtaques;
@@ -54,6 +54,7 @@ public class MeleeCombat : MonoBehaviour
                 AudioManager.Instance.PlaySound(Cortado);
                 Destroy(collisionador.gameObject);
                 particulas.Play();
+                GameManagerScript.Instance.SumarPoints(5);
             }
         }
     }

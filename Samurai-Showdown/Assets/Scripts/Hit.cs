@@ -24,8 +24,6 @@ public class Hit : MonoBehaviour
 
                 // Aplicar una fuerza al personaje para empujarlo
                 characterController.AplicarEmpuje(pushDirection);
-
-                Debug.Log("Ataque");
             }
          }
      }

@@ -15,6 +15,7 @@ public class CharacterController : MonoBehaviour
    private bool canMove = true;
    private Vector2 lastMovementDirection;
    public float fuerzaEmpuje;
+   //public GameObject Player;
    public GameObject toActivate;
    public GameObject ToActivate2;
    public GameObject Cartel;
@@ -22,7 +23,18 @@ public class CharacterController : MonoBehaviour
    public AudioClip BossFight;
    public AudioClip BossSpawn;
    public AudioClip SonidoAmbiente;
+    public static CharacterController Instance {get; private set; }
 
+    private void Awake()
+    {
+        if( Instance == null)
+        {
+            Instance = this;
+        }else
+        {
+            Debug.Log("jaimmm");
+        }
+    }
     private void Start() 
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -93,7 +105,6 @@ public class CharacterController : MonoBehaviour
         }
         rigidBody.AddForce(direccionGolpe * fuerzaGolpe);
         StartCoroutine(WaitAndMove());
-        Debug.Log("Golpe");
     }
     public void AplicarEmpuje(Vector2 direccion)
     {
@@ -132,6 +143,10 @@ public class CharacterController : MonoBehaviour
             AudioManager.Instance.PlayInLoop(SonidoAmbiente);
             Destroy(coll.gameObject);
         }
+    }
+    public void Die()
+    {
+        Menu.Instance.Muerte();
     }
     
 }
